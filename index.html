@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Coffee Shop</title>
+	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="image/coffee.ico" />
+</head>
+
+<body>
+
+	<!-- header starts  -->
+	<header class="header">
+		<div id="menu-btn" class="fas fa-bars"></div>
+		<a href="#" class="logo"> coffee <i class="fas fa-mug-hot"></i> </a>
+		<nav class="navbar">
+			<a href="#home">home</a>
+			<a href="#about">about</a>
+			<a href="#menu">menu</a>
+			<a href="#review">review</a>
+			<a href="#book">book</a>
+		</nav>
+		<a href="#" class="btn">book a table</a>
+		<div class="cart-btn">
+			<i class="fas fa-shopping-bag"></i>
+			<span class="cart-total">$0.00</span>
+		</div>
+
+		<div class="cart-modal">
+			<div class="cart-items">
+			</div>
+			<div class="cart-total-container">
+				<p>Total: <span class="modal-cart-total">$0.00</span></p>
+				<button method="post" action="orders.php" class="checkout-btn">Place order</button>
+				<button id="createButton" class="checkout-btn create-btn" disabled
+					style="margin-top: 10px;">Unavailable</button>
+				<div class="promo-code-container" id="promoCodeContainer" style="display: none; margin-top: 10px;">
+					<input type="text" id="promoCode" readonly>
+					<small><br> Show code to cashier for a free coffee</small>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- header ends -->
+
+	<!-- home starts  -->
+	<section class="home" id="home">
+		<div class="row">
+			<div class="content">
+				<h3>fresh coffee in the morning</h3>
+				<a href="#menu" class="btn">buy one now</a>
+			</div>
+			<div class="image">
+				<img src="image/home-img-1.png" class="main-home-image" alt="">
+			</div>
+		</div>
+		<div class="image-slider">
+			<img src="image/home-img-1.png" alt="">
+			<img src="image/home-img-2.png" alt="">
+			<img src="image/home-img-3.png" alt="">
+		</div>
+	</section>
+	<!-- home ends -->
+
+	<!-- about starts  -->
+	<section class="about" id="about">
+		<h1 class="heading"> about us <span>why choose us</span> </h1>
+		<div class="row">
+			<div class="image">
+				<img src="image/about-img.png" alt="">
+			</div>
+			<div class="content">
+				<h3 class="title">what's make our coffee special!</h3>
+				<p>We are a team of true coffee connoisseurs who have created a cozy space for true gourmets. Our mission is
+					to reveal the rich world of coffee flavors through the impeccable quality of each cup. We work only with
+					selected beans and pay special attention to the roasting and preparation process.</p>
+				<a href="https://yandex.ru/maps/-/CHEl4B1-" class="btn">read more</a>
+				<div class="icons-container">
+					<div class="icons">
+						<img src="image/about-icon-1.png" alt="">
+						<h3>quality coffee</h3>
+					</div>
+					<div class="icons">
+						<img src="image/about-icon-2.png" alt="">
+						<h3>our branches</h3>
+					</div>
+					<div class="icons">
+						<img src="image/about-icon-3.png" alt="">
+						<h3>free delivery</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- about ends -->
+
+	<!-- menu starts  -->
+	<section class="menu" id="menu">
+		<h1 class="heading"> our menu <span>popular menu</span> </h1>
+		<div class="box-container">
+			<a href="#" class="box">
+				<img src="image/menu-1.png" alt="">
+				<div class="content">
+					<h3>
+						<div class="coffee-item" id="latte" data-price="6.99">Latte</div>
+					</h3>
+					<p>A smooth espresso with lots of milk and a thin layer of milk foam.</p>
+					<div class="price"><span>$6.99</span></div>
+				</div>
+			</a>
+			<a href="#" class="box">
+				<img src="image/menu-2.png" alt="">
+				<div class="content">
+					<h3>
+						<div class="coffee-item" id="FlatWhite" data-price="8.49">Flat White</div>
+					</h3>
+					<p>A double espresso with velvety milk and a minimal layer of foam.</p>
+					<div class="price"><span>$8.49</span></div>
+				</div>
+			</a>
+			<a href="#" class="box">
+				<img src="image/menu-3.png" alt="">
+				<div class="content">
+					<h3>
+						<div class="coffee-item" id="Cappuchino" data-price="6.75">Cappuchino</div>
+					</h3>
+					<p>A classic combination of espresso with equal parts milk and airy milk foam.</p>
+					<div class="price"><span>$6.75</span></div>
+				</div>
+			</a>
+			<a href="#" class="box">
+				<img src="image/menu-4.png" alt="">
+				<div class="content">
+					<h3>
+						<div class="coffee-item" id="Frappe" data-price="8.99">Frappe</div>
+					</h3>
+					<p>A chilled coffee drink with crushed ice and cream.</p>
+					<div class="price"><span>$8.99</span></div>
+				</div>
+			</a>
+			<a href="#" class="box">
+				<img src="image/menu-5.png" alt="">
+				<div class="content">
+					<h3>
+						<div class="coffee-item" id="Americano" data-price="5.49">Americano</div>
+					</h3>
+					<p>Espresso with hot water added for a smooth but rich taste.</p>
+					<div class="price"><span>$5.49</span></div>
+				</div>
+			</a>
+			<a href="#" class="box">
+				<img src="image/menu-6.png" alt="">
+				<div class="content">
+					<h3>
+						<div class="coffee-item" id="ConPanna" data-price="9.99">Con Panna</div>
+					</h3>
+					<p>Espresso with whipped cream - an Italian classic.</p>
+					<div class="price"><span>$9.99</span></div>
+				</div>
+			</a>
+		</div>
+	</section>
+	<!-- menu ends -->
+
+	<!-- review starts  -->
+	<section class="review" id="review">
+		<h1 class="heading"> reviews <span>what people says</span> </h1>
+		<div class="swiper review-slider">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide box">
+					<i class="fas fa-quote-left"></i>
+					<i class="fas fa-quote-right"></i>
+					<img src="image/pic-1.png" alt="">
+					<div class="stars">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+					<p>Amazing atmosphere and impeccable coffee. I was especially impressed by the latte - the perfect
+						balance of espresso and milk.</p>
+					<h3>Alexander</h3>
+					<span>Regular</span>
+				</div>
+				<div class="swiper-slide box">
+					<i class="fas fa-quote-left"></i>
+					<i class="fas fa-quote-right"></i>
+					<img src="image/pic-2.png" alt="">
+					<div class="stars">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+					<p>A cozy place with professional baristas. The cappuccino here is a real work of art!</p>
+					<h3>Elena</h3>
+					<span>Сritic of a local publication</span>
+				</div>
+				<div class="swiper-slide box">
+					<i class="fas fa-quote-left"></i>
+					<i class="fas fa-quote-right"></i>
+					<img src="image/pic-3.png" alt="">
+					<div class="stars">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+					<p>I regularly stop by for an Americano before work. The quality is consistently high, the staff is
+						always friendly.</p>
+					<h3>Mikhail</h3>
+					<span>Regular</span>
+				</div>
+				<div class="swiper-slide box">
+					<i class="fas fa-quote-left"></i>
+					<i class="fas fa-quote-right"></i>
+					<img src="image/pic-4.png" alt="">
+					<div class="stars">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+					<p>I discovered flat white in this coffee shop. Now it's my favorite drink! But their Frappe is simply
+						amazing on hot days.</p>
+					<h3>Zhanna</h3>
+					<span>Satisfiel client</span>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</section>
+	<!-- review ends -->
+
+	<!-- book starts  -->
+	<section class="book" id="book">
+		<h1 class="heading"> booking <span>reserve a table</span> </h1>
+		<form method="post" action="booking.php">
+			<input type="text" id="name" name="name" placeholder="your name" required class="box">
+			<input type="email" id="email" name="email" placeholder="your email" required class="box">
+			<input type="tel" id="phone" name="phone" placeholder="your number" required class="box">
+			<input type="date" id="reservationDate" name="reservationDate" required class="box">
+			<input type="time" id="reservationTime" name="reservationTime" required class="box">
+			<textarea type="text" id="message" name="message" placeholder="your message" class="box" id="" cols="30"
+				rows="10"></textarea>
+			<input type="submit" value="send message" class="btn">
+			<div id="bookingMessage" style="margin-top: 10px; font-size: 1rem;"></div>
+		</form>
+	</section>
+	<!-- book ends -->
+
+	<!-- footer starts  -->
+	<section class="footer">
+		<div class="box-container">
+			<div class="box">
+				<h3>our branches</h3>
+				<a href="#"> <i class="fas fa-arrow-right"></i> Russia </a>
+				<a href="#"> <i class="fas fa-arrow-right"></i> USA </a>
+				<a href="#"> <i class="fas fa-arrow-right"></i> France </a>
+				<a href="#"> <i class="fas fa-arrow-right"></i> Japan </a>
+			</div>
+
+			<div class="box">
+				<h3>quick links</h3>
+				<a href="#home"> <i class="fas fa-arrow-right"></i> home </a>
+				<a href="#about"> <i class="fas fa-arrow-right"></i> about </a>
+				<a href="#menu"> <i class="fas fa-arrow-right"></i> menu </a>
+				<a href="#book"> <i class="fas fa-arrow-right"></i> book </a>
+			</div>
+			<div class="box">
+				<h3>contact info</h3>
+				<a href="#"> <i class="fas fa-phone"></i> +7 911 722-36-60 </a>
+				<a href="#"> <i class="fas fa-phone"></i> +7 921 755-48-70 </a>
+				<a href="#"> <i class="fas fa-envelope"></i> Coffee@gmail.com </a>
+				<a href="https://yandex.ru/maps/-/CHEl4B1-"> <i class="fas fa-envelope"></i> Admiralty Canal Emb, 2 </a>
+			</div>
+			<div class="box">
+				<h3>our social</h3>
+				<a href="facebook.com"> <i class="fab fa-facebook-f"></i> facebook </a>
+				<a href="x.com"> <i class="fab fa-twitter"></i> twitter </a>
+				<a href="instagram.com"> <i class="fab fa-instagram"></i> instagram </a>
+				<a href="linkedin.com"> <i class="fab fa-linkedin"></i> linkedin </a>
+			</div>
+		</div>
+		<div class="credit"> created by <a href="https://github.com/Ready2BOOM" target="_blank">Ready2BOOM</a> | all
+			rights reserved </div>
+	</section>
+	<!-- footer section ends -->
+
+	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
